@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Clean Up Test</title>
+        <title>Encounters Test</title>
         <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
        <link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
     <!--
@@ -19,9 +19,9 @@
         <div id="meds">Loading...</div>
         <br/>
     
-/*        <h4>Encounters</h4>
+        <h4>Encounters</h4>
         <div id="encounter">Loading...</div>
-*/    
+    
         <script type="text/javascript">
             FHIR.oauth2.ready().then(function(client) {
 
@@ -38,7 +38,7 @@
                 // Get MedicationRequests for the selected patient
                 client.request("/MedicationRequest?patient=" + client.patient.id, {
                     resolveReferences: [ "medicationReference" ],
-                    graph: true
+                    //graph: true
                 })
 
                 // Reject if no MedicationRequests are found
@@ -59,7 +59,7 @@
                 );
                    }).catch(console.error);
             
-/*            
+            
             // Get Encounter for the selected patient
                 client.request("/Encounter?patient=" + client.patient.id, {
                     resolveReferences: [ "encounter" ],
@@ -83,7 +83,7 @@
                     }
                 );
                    }).catch(console.error);
-*/
+
         </script>
     </body>
 </html>
