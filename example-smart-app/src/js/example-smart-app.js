@@ -26,7 +26,7 @@
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
-          var gender = patient.gender;
+/*          var gender = patient.gender;
 
           var fname = '';
           var lname = '';
@@ -40,8 +40,8 @@
           p.birthdate = patient.birthDate;
           p.gender = gender;
           p.fname = fname;
-          p.lname = lname;
-
+          p.lname = lname; 
+*/
           ret.resolve(p);
         });
       } else {
@@ -54,7 +54,7 @@
 
   };
 
-  function defaultPatient(){
+ /* function defaultPatient(){
     return {
       fname: {value: ''},
       lname: {value: ''},
@@ -66,6 +66,6 @@
       ldl: {value: ''},
       hdl: {value: ''},
     };
-  }
+  } */
 
 })(window);
