@@ -26,22 +26,6 @@
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
-/*          var gender = patient.gender;
-
-          var fname = '';
-          var lname = '';
-
-          if (typeof patient.name[0] !== 'undefined') {
-            fname = patient.name[0].given.join(' ');
-            lname = patient.name[0].family.join(' ');
-          }
-
-          var p = defaultPatient();
-          p.birthdate = patient.birthDate;
-          p.gender = gender;
-          p.fname = fname;
-          p.lname = lname; 
-*/
           ret.resolve(p);
         });
       } else {
@@ -51,21 +35,5 @@
 
     FHIR.oauth2.ready(onReady, onError);
     return ret.promise();
-
   };
-
- /* function defaultPatient(){
-    return {
-      fname: {value: ''},
-      lname: {value: ''},
-      gender: {value: ''},
-      birthdate: {value: ''},
-      height: {value: ''},
-      systolicbp: {value: ''},
-      diastolicbp: {value: ''},
-      ldl: {value: ''},
-      hdl: {value: ''},
-    };
-  } */
-
 })(window);
