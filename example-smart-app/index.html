@@ -79,7 +79,7 @@
             // Render the current patient's encounters (or any error)
                 .then(
                     function(encounter) {
-                        document.getElementById("encounter").innerText = JSON.stringify(meds, null, 4);
+                        document.getElementById("encounter").innerText = JSON.stringify(encounter, null, 4);
                     },
                     function(error) {
                         document.getElementById("encounter").innerText = error.stack;
