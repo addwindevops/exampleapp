@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Encounters Test</title>
+        <title>Encounters Test 10/26</title>
         <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
         <script src='./lib/es6-shim-0.35.1.min.js'></script>
         <script src='./src/js/example-smart-app.js'></script>
@@ -63,7 +63,7 @@
  */           
             
             // Get Encounter for the selected patient
-                client.request("/Encounter?patient=" + client.patient.id})
+                client.request("/Encounter?patient=" + client.patient.id)
 
                 // Reject if no Encounters are found
                 .then(function(data) {
