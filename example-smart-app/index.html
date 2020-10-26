@@ -38,7 +38,7 @@
                     }
                 );
 
-                // Get MedicationRequests for the selected patient
+/*                // Get MedicationRequests for the selected patient
                 client.request("/MedicationRequest?patient=" + client.patient.id, {
                     resolveReferences: [ "medicationReference" ],
                     //graph: true
@@ -61,7 +61,7 @@
                     }
                 );
                    }).catch(console.error);
-            
+ */           
             
             // Get Encounter for the selected patient
                 client.request("/Encounter?patient=" + client.patient.id, {
