@@ -79,7 +79,20 @@ function onReady(smart)  {
     onError();
   }
 }
-
+window.drawVisualization = function(p) {
+  $('#holder').show();
+  $('#loading').hide();
+  $('#fname').html(p.fname);
+  $('#lname').html(p.lname);
+  $('#gender').html(p.gender);
+  $('#birthdate').html(p.birthdate);
+  $('#age').html(p.age);
+  $('#height').html(p.height);
+  $('#systolicbp').html(p.systolicbp);
+  $('#diastolicbp').html(p.diastolicbp);
+  $('#ldl').html(p.ldl);
+  $('#hdl').html(p.hdl);
+};
     FHIR.oauth2.ready(onReady, onError);
     return ret.promise();
   };
