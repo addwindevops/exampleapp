@@ -41,7 +41,6 @@
 /*                // Get MedicationRequests for the selected patient
                 client.request("/MedicationRequest?patient=" + client.patient.id, {
                     resolveReferences: [ "medicationReference" ],
-                    //graph: true
                 })
 
                 // Reject if no MedicationRequests are found
@@ -64,10 +63,7 @@
  */           
             
             // Get Encounter for the selected patient
-                client.request("/Encounter?patient=" + client.patient.id, {
-                    resolveReferences: [ "encounter" ],
-                    graph: true
-                })
+                client.request("/Encounter?patient=" + client.patient.id})
 
                 // Reject if no Encounters are found
                 .then(function(data) {
