@@ -75,7 +75,7 @@
             // Render the current patient's encounters (or any error)
                 .then(
                     function(CarePlan) {
-                        document.getElementById("CarePlan").innerText = JSON.stringify(encounter, null, 4);
+                        document.getElementById("CarePlan").innerText = JSON.stringify(careplan, null, 4);
                     },
                     function(error) {
                         document.getElementById("CarePlan").innerText = error.stack;
