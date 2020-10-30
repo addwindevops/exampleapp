@@ -22,8 +22,8 @@
         <div id="meds">Loading...</div>
         <br/>
     
-        <h4>Encounters</h4>
-        <div id="encounter">Loading...</div>
+        <h4>Care Plan</h4>
+        <div id="CarePlan">Loading...</div>
     
         <script type="text/javascript">
             FHIR.oauth2.ready().then(function(client) {
@@ -63,22 +63,22 @@
  */           
             
             // Get Encounter for the selected patient
-                client.request("/Encounter?patient=" + client.patient.id)
+                client.request("/CarePlan?patient=" + client.patient.id)
 
                 // Reject if no Encounters are found
                 .then(function(data) {
                     if (!data.entry || !data.entry.length) {
-                        throw new Error("No encounters found for the selected patient");
+                        throw new Error("No careplan found for the selected patient");
                     }
                     return data.entry;
                 })
             // Render the current patient's encounters (or any error)
                 .then(
-                    function(encounter) {
-                        document.getElementById("encounter").innerText = JSON.stringify(encounter, null, 4);
+                    function(CarePlan) {
+                        document.getElementById("CarePlan").innerText = JSON.stringify(encounter, null, 4);
                     },
                     function(error) {
-                        document.getElementById("encounter").innerText = error.stack;
+                        document.getElementById("CarePlan").innerText = error.stack;
                     }
                 );
                    }).catch(console.error);
